@@ -14,7 +14,7 @@ public class TestQRS {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		File file = new File("/Users/introtuce/eclipse-workspace/QRS Detection/src/manju_29ecg_graph.csv");
+		File file = new File("/Users/introtuce/eclipse-workspace/QRS Detection/src/text_data.csv");
 		
 		if (!file.exists()) {
 			System.out.println("File Not found");
