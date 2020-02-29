@@ -1,21 +1,3 @@
-/*
- * Copyright (c) 2012 Patrick S. Hamilton (pat@eplimited.com), Wolfgang Halbeisen (halbeisen.wolfgang@gmail.com)
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- * and associated documentation files (the "Software"), to deal in the Software without restriction, 
- * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
- * subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all copies 
- * or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
- * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE 
- * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
- * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
 
 package com.nitrr.classification;
 
@@ -26,15 +8,7 @@ import static com.nitrr.classification.ECGCODES.UNKNOWN;
 import com.nitrr.classification.BeatAnalyzer.AnalyzeBeatResult;
 import com.nitrr.detection.QRSDetectorParameters;
 
-/**
- * Match beats to previous beats.
- * 
- * Matcher contains functions for managing template matching of beats and
- * managing of feature data associated with each beat type.  These
- * functions are called functions in Classifier.  Beats are matched to
- * previoiusly detected beats types based on how well they match point by point
- * in a MATCH_LENGTH region centered on FIDMARK (R-wave location).
- */
+
 public class Matcher 
 	{
 

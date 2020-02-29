@@ -1,30 +1,9 @@
-/*
- * Copyright (c) 2012 Patrick S. Hamilton (pat@eplimited.com), Wolfgang Halbeisen (halbeisen.wolfgang@gmail.com)
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- * and associated documentation files (the "Software"), to deal in the Software without restriction, 
- * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
- * subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all copies 
- * or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
- * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE 
- * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
- * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
 
 package com.nitrr.classification;
 
 import java.util.Arrays;
 
-/**
- * This file contains functions for determining the QRS onset, QRS offset,
- * beat onset, beat offset, polarity, and isoelectric level for a beat.
- */
+
 public class BeatAnalyzer 
 	{
 
@@ -48,15 +27,7 @@ public class BeatAnalyzer
 		INF_CHK_N   = bdacParameters.BEAT_MS40 ;
 		}
 	
-	/**
-	 * IsoCheck determines whether the amplitudes of a run
-	 * of data fall within a sufficiently small amplitude that
-	 * the run can be considered isoelectric.
-	 * 
-	 * @param data
-	 * @param isoLength
-	 * @return
-	 */
+
 	public boolean IsoCheck(int[] data, int isoLength)
 		{
 		int i, max, min ;
@@ -72,20 +43,7 @@ public class BeatAnalyzer
 		return(max - min < ISO_LIMIT);
 		}
 	
-	/**
-	 * AnalyzeBeat takes a beat buffer as input and returns (via pointers)
-	 * estimates of the QRS onset, QRS offset, polarity, isoelectric level
-	 * beat beginning (P-wave onset), and beat ending (T-wave offset).
-	 * Analyze Beat assumes that the beat has been sampled at 100 Hz, is
-	 * BEATLGTH long, and has an R-wave location of roughly FIDMARK.
-	 * 
-	 * Note that beatBegin is the number of samples before FIDMARK that
-	 * the beat begins and beatEnd is the number of samples after the
-	 * FIDMARK that the beat ends.
-	 * 
-	 * @param beat A beat buffer
-	 * @return The result of the analysis
-	 */
+
 	public AnalyzeBeatResult AnalyzeBeat(int[] beat)
 		{
 		AnalyzeBeatResult result = new AnalyzeBeatResult();

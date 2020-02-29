@@ -1,11 +1,6 @@
 package com.nitrr.classification;
 
-/* file: ecgcodes.h	T. Baker and G. Moody	  June 1981
-Last revised:  19 March 1992		dblib 7.0
-ECG annotation codes
 
-Copyright (C) Massachusetts Institute of Technology 1992. All rights reserved.
-*/
 
 public class ECGCODES {
 

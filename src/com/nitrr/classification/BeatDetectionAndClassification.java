@@ -1,21 +1,3 @@
-/*
- * Copyright (c) 2012 Patrick S. Hamilton (pat@eplimited.com), Wolfgang Halbeisen (halbeisen.wolfgang@gmail.com)
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- * and associated documentation files (the "Software"), to deal in the Software without restriction, 
- * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
- * subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all copies 
- * or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
- * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE 
- * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
- * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
 
 package com.nitrr.classification;
 
@@ -23,13 +5,7 @@ import com.nitrr.classification.Classifier.ClassifyResult;
 import com.nitrr.detection.QRSDetector2;
 import com.nitrr.detection.QRSDetectorParameters;
 
-/**
- * BDAC contains functions for handling Beat Detection And Classification.
- * The primary function calls a qrs detector.  When a beat is detected it waits
- * until a sufficient number of samples from the beat have occurred.  When the
- * beat is ready, BeatDetectAndClassify passes the beat and the timing
- * information on to the functions that actually classify the beat.
- */
+
 public class BeatDetectionAndClassification 
 	{
 
@@ -55,11 +31,7 @@ public class BeatDetectionAndClassification
 	public int RRCount = 0 ;
 	public int InitBeatFlag = 1 ;
 	
-	/**
-	 * Create a new classifier with the given parameters.
-	 * @param bdacParameters The sampleRate-dependent parameters
-	 * @param qrsDetectorParameters The sampleRate-dependent parameters
-	 */
+
 	public BeatDetectionAndClassification(BDACParameters bdacParameters, 
 			QRSDetectorParameters qrsDetectorParameters) 
 		{
@@ -67,15 +39,7 @@ public class BeatDetectionAndClassification
 		qrsDetParas = qrsDetectorParameters ;
 		BeatBuffer = new int[bdacParas.BEATLGTH] ;
 		}
-	
-	/**
-	 * Injects the objects
-	 * 
-	 * @param qrsDetector The qrsDetector
-	 * @param noiseChecker The noiseChecker
-	 * @param matcher The matcher
-	 * @param classifier The classifier
-	 */
+
 	public void setObjects(QRSDetector2 qrsDetector, NoiseChecker noiseChecker, 
 		Matcher matcher, Classifier classifier) 
 		{
@@ -85,20 +49,7 @@ public class BeatDetectionAndClassification
 		this.classifier = classifier ;
 		}
 	
-	/**
-	 * BeatDetectAndClassify() implements a beat detector and classifier.
-	 * ECG samples are passed into BeatDetectAndClassify() one sample at a
-	 * time.  BeatDetectAndClassify has been designed for a sample rate of
-	 * 200 Hz.  When a beat has been detected and classified the detection
-	 * delay is returned and the beat classification is returned. 
-	 * For use in debugging, the number of the template
-	 * that the beat was matched to is returned in via beatMatch.
-	 * 
-	 * @param ecgSample
-	 * @return BeatDetectAndClassify() returns 0 if no new beat has been detected and
-	 * classified.  If a beat has been classified, BeatDetectAndClassify returns
-	 * the number of samples since the approximate location of the R-wave.
-	 */
+
 	public BeatDetectAndClassifyResult BeatDetectAndClassify(int ecgSample)
 		{
 		BeatDetectAndClassifyResult result = new BeatDetectAndClassifyResult();
